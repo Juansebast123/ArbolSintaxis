@@ -17,23 +17,28 @@ Tipos de tokens que reconoce:
 - Construye el arbol de sintaxis a partir de los tokens.
 - Usa las reglas de una gramatica libre de contexto:
 
-  # Métodos principales:
+  # Metodos principales:
 
   - parseE → analiza expresiones con + y -.
-  - parseT → analiza términos con * y /.
+  - parseT → analiza terminos con * y /.
   - parseF → analiza factores (números, identificadores o expresiones entre paréntesis).
   - Cada vez que reconoce una regla, crea un nodo en el grafo (networkx.DiGraph).
 
 # Visualización con Graphviz
-En vez de spring_layout (que genera un grafo “desordenado”), se usa:
+En vez de spring_layout (que genera un grafo desordenado), se usa:
 
 from networkx.drawing.nx_agraph import graphviz_layout
 pos = graphviz_layout(parser.G, prog='dot')
 
 - Esto organiza los nodos jerárquicamente (la raíz arriba, hojas abajo).
-- nx.draw(...) dibuja el grafo con etiquetas y nodos en azul.
+- nx.draw: dibuja el grafo con etiquetas y nodos en azul.
 
 # Ejecución del programa
 
 Se ejecuta con:
 - python3 ArbolSintaxis.py gra.txt cadenas.txt
+
+<img width="848" height="809" alt="image" src="https://github.com/user-attachments/assets/96d15f91-83ea-48e7-ac37-d182d67a93ba" />
+
+<img width="641" height="549" alt="image" src="https://github.com/user-attachments/assets/2d25daca-1aec-465e-a339-e26440320a41" />
+
